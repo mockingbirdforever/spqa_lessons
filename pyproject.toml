@@ -1,0 +1,10 @@
+[project]
+
+dependencies = [
+    'pytest'
+]
+
+[tool.pytest.ini_options]
+markers = [
+    'positive_test: только позитивные тесты'
+]
