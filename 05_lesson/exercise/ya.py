@@ -9,4 +9,5 @@ sleep(5)
 driver.fullscreen_window()
 sleep(5)
 
-driver.save_screenshot('./ya.png')
+driver.save_screenshot('./ya1.png')
+
