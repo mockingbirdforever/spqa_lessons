@@ -1,13 +1,18 @@
 from selenium import webdriver
 from time import sleep
+import random
 
 driver = webdriver.Chrome()
 
+randon_number = random.randint(0, 1000)
+screenshot_name = f'ya{randon_number}.png'
+
 driver.get("https://ya.ru/")
-sleep(5)
+sleep(2)
 
 driver.fullscreen_window()
-sleep(5)
+sleep(2)
 
-driver.save_screenshot('./ya1.png')
+
+driver.save_screenshot(screenshot_name)
 
