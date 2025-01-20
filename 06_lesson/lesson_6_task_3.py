@@ -18,3 +18,6 @@ print(text)
 
 driver.quit()
 
+
+EC.text_to_be_present_in_element()
+
