@@ -22,7 +22,7 @@ login_button = driver.find_element(By.CSS_SELECTOR, '#login-button')
 
 username_input.send_keys(username)
 password_input.send_keys(password)
-login_button.click
+login_button.click()
 
 
 item_1 = driver.find_element(By.CSS_SELECTOR, '#add-to-cart-sauce-labs-backpack')
@@ -30,15 +30,15 @@ item_2 = driver.find_element(By.CSS_SELECTOR, '#add-to-cart-sauce-labs-bolt-t-sh
 item_3 = driver.find_element(By.CSS_SELECTOR, '#add-to-cart-sauce-labs-onesie')
 shopping_cart_button = driver.find_element(By.CSS_SELECTOR, '#shopping_cart_container > a')
 
-item_1.click
-item_2.click
-item_3.clear
-shopping_cart_button.click
+item_1.click()
+item_2.click()
+item_3.click()
+shopping_cart_button.click()
 
 
-checkout_button = driver.find_element(By.CSS_SELECTOR, '#shopping_cart_container > a')
+checkout_button = driver.find_element(By.CSS_SELECTOR, '#checkout')
 
-checkout_button.click
+checkout_button.click()
 
 
 first_name_input = driver.find_element(By.CSS_SELECTOR, '#first-name')
@@ -49,10 +49,11 @@ continue_button = driver.find_element(By.CSS_SELECTOR, '#continue')
 first_name_input.send_keys('Yurii')
 last_name_input.send_keys('Laz')
 postal_code_input.send_keys('1234567')
-continue_button.click
+continue_button.click()
 
 
 total_sum = driver.find_element(By.CSS_SELECTOR, '#checkout_summary_container > div > div.summary_info > div.summary_total_label').text
+total_sum = total_sum[7:]
 
 
 driver.quit()
