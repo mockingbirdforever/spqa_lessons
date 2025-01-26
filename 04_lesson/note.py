@@ -5,10 +5,9 @@ utils = StringUtils()
 #
 # print(utils.capitilize(None))
 
-text = '1-2-3'
-separator = '-'
-a = utils.to_list(text, separator)
+text = True
+symb = ''
+a = utils.starts_with(text, symb)
 
-utils.to_list(text, separator)
 
-print(type(a))
+print(a)
