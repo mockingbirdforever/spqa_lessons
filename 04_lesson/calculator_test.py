@@ -4,7 +4,7 @@ import pytest
 calculator = Calculator()
 
 
-@pytest.mark.positive_test
+# @pytest.mark.positive_test
 def test_sum_positive_nums():
     calculator = Calculator()
     res = calculator.sum(4, 5)
