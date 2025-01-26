@@ -58,5 +58,6 @@ total_sum = total_sum[7:]
 
 driver.quit()
 
+print(total_sum)
 
 assert total_sum == test_sum
