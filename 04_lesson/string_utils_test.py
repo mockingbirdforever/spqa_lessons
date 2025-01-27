@@ -223,23 +223,58 @@ def test_exception_utils_start(text, symbol):
     ('Текст ', ' ', True),
     ('Текст', ' ', False),
 ])
-def test_utils_end(text, symb, result):
+def test_positive_utils_end(text, symb, result):
     util = utils.end_with(text, symb)
     assert util == result
 
 
-# is_empty
+@pytest.mark.negative_test
+@pytest.mark.parametrize('text, symb, result', [
+    ('', '', True),
+    ('   ', ' ', True),
+])
+def test_negative_utils_end(text, symb, result):
+    util = utils.end_with(text, symb)
+    assert util == result
+
+
+@pytest.mark.negative_test
+@pytest.mark.parametrize('text, symbol', [
+    (None, 'a'),
+    (123, 'a'),
+    (True, 'a')
+])
+def test_exception_utils_end(text, symbol):
+    with pytest.raises(Exception) as exc_info:
+        utils.starts_with(text, symbol)
+    assert "has no attribute" in str(exc_info.value)
+
+
+# IS_EMPTY
 @pytest.mark.positive_test
 @pytest.mark.parametrize('text, result', [
     ('', True),
     ('т', False),
+    (' ', True),
 ])
-def test_utils_empty(text, result):
+def test_positive_utils_empty(text, result):
     util = utils.is_empty(text)
     assert util == result
 
 
-# list_to_string
+@pytest.mark.negative_test
+@pytest.mark.parametrize('text', [
+    None,
+    123,
+    True,
+])
+def test_exception_utils_empty(text):
+    with pytest.raises(Exception) as exc_info:
+        utils.is_empty(text)
+    assert "has no attribute" in str(exc_info.value)
+
+
+# LIST_TO_STRING
 @pytest.mark.positive_test
 @pytest.mark.parametrize('text, separator, result', [
     (['1', '2', '3'], ':', '1:2:3'),
@@ -247,8 +282,28 @@ def test_utils_empty(text, result):
     (['а', 'аа', 'ааа'], '-а-', 'а-а-аа-а-ааа'),
     (['1', '2', '3'], '', '123'),
 ])
-def test_utils_to_string(text, separator, result):
+def test_positive_utils_to_string(text, separator, result):
     util = utils.list_to_string(text, separator)
     assert util == result
 
 
+@pytest.mark.negative_test
+@pytest.mark.parametrize('text, separator, result', [
+    ([], '', ''),
+    ('aaaaa', '', 'aaaaa'),
+])
+def test_negative_utils_to_string(text, separator, result):
+    util = utils.list_to_string(text, separator)
+    assert util == result
+
+
+@pytest.mark.negative_test
+@pytest.mark.parametrize('text', [
+    None,
+    123,
+    True,
+])
+def test_exception_utils_empty(text):
+    with pytest.raises(Exception) as exc_info:
+        utils.list_to_string(text)
+    assert "has no" in str(exc_info.value)
