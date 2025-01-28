@@ -29,7 +29,6 @@ def test_negative_utils_first_string(text, result):
     assert util == result
 
 
-# не понял как объединить с предыдущим негативным тестом
 @pytest.mark.negative_test
 @pytest.mark.parametrize('text', [
     1,
@@ -303,7 +302,7 @@ def test_negative_utils_to_string(text, separator, result):
     123,
     True,
 ])
-def test_exception_utils_empty(text):
+def test_exception_utils_to_string(text):
     with pytest.raises(Exception) as exc_info:
         utils.list_to_string(text)
     assert "has no" in str(exc_info.value)
