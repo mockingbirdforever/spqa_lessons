@@ -1,3 +1,5 @@
+# Задание 4. Клик по кнопке без ID
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
