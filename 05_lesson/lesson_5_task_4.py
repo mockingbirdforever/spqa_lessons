@@ -1,15 +1,16 @@
+# Задание 6. Модальное окно
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from time import sleep
 
-driver = webdriver.Firefox()
+driver = webdriver.Chrome()
 
 
 driver.get("https://the-internet.herokuapp.com/entry_ad")
-sleep(5)
-stupid_button = driver.find_element(By.XPATH, '//*[@id="modal"]/div[2]/div[3]/p')
+sleep(3)
 
-stupid_button.click()
+driver.find_element(By.CSS_SELECTOR, ".modal-footer").click()
 
 sleep(3)
+driver.quit()
