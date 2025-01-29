@@ -17,8 +17,9 @@ text_n_a = 'N/A'
 # data for shop test
 username = 'standard_user'
 password = 'secret_sauce'
-test_sum = '$58.29'
 
 customer_first_name = 'Yurii'
 customer_last_name = 'Laz'
 customer_postal_code = '1234567'
+
+test_sum = 'Total: $58.29'

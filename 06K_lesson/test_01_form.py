@@ -22,6 +22,7 @@ driver.find_element(By.NAME, 'company').send_keys(text_company)
 driver.find_element(By.CSS_SELECTOR, 'button[type="submit"]').click()
 
 
+@pytest.mark.positive_test
 @pytest.mark.parametrize('text, text_filled', [
     (text_first_name, driver.find_element(By.ID, 'first-name').text),
     (text_last_name, driver.find_element(By.ID, 'last-name').text),
@@ -37,6 +38,7 @@ def test_positive_input(text, text_filled):
     assert text == text_filled
 
 
+@pytest.mark.negative_test
 @pytest.mark.parametrize('text', [
     driver.find_element(By.ID, 'zip-code').text
 ])
