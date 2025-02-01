@@ -11,6 +11,7 @@ text_email = 'test@skypro.com'
 text_phone = '+7985899998787'
 text_job_position = 'QA'
 text_company = 'SkyPro'
+
 text_n_a = 'N/A'
 
 
