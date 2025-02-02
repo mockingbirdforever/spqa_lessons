@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
-class MainPage:
+class FormPage:
 
     def __init__(self, driver):
         self._driver = driver

@@ -1,16 +1,12 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from AuthPage import Auth
-from MainPage import Main
-from CartPage import Cart
-from time import sleep
+from lesson_7_task_3.AuthPage import Auth
+from lesson_7_task_3.MainPage import Main
+from lesson_7_task_3.CartPage import Cart
 
 
 def test_shop_buy():
     
-    test_sum = 1
+    test_sum = 'Total: $58.29'
 
     driver = webdriver.Chrome()
     auth = Auth(driver)
@@ -18,10 +14,14 @@ def test_shop_buy():
     buy = Main(driver)
     buy.add_items_to_cart()
     check = Cart(driver)
-    check.checkout('1', '1', '1')
+    check.checkout('Yuri', 'Laz', '123456')
     total_sum = check.total_sum()
 
+    driver.quit()
+
     assert total_sum == test_sum
+
+
     
 
 

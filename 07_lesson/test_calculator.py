@@ -1,5 +1,5 @@
 from selenium import webdriver
-from Calculator import Calculator
+from lesson_7_task_2.Calculator import Calculator
 
 
 def test_calculator():
@@ -15,9 +15,9 @@ def test_calculator():
     calc.sum_function(num1, num2)
     actual_result = calc.check_result(expected_result, delay)
 
-    assert expected_result == actual_result
-
     driver.quit()
+
+    assert expected_result == actual_result
 
 
 

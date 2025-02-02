@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 class Cart:
 
     def __init__(self, driver):
@@ -12,5 +13,5 @@ class Cart:
         self._driver.find_element(By.CSS_SELECTOR, '#continue').click()
 
     def total_sum(self):
-        return driver.find_element(By.CSS_SELECTOR, '[data-test=total-label]').text
+        return self._driver.find_element(By.CSS_SELECTOR, '[data-test=total-label]').text
 
