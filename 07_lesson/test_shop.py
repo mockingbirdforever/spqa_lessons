@@ -5,7 +5,7 @@ from lesson_7_task_3.CartPage import Cart
 
 
 def test_shop_buy():
-    
+
     test_sum = 'Total: $58.29'
 
     driver = webdriver.Chrome()
@@ -20,10 +20,3 @@ def test_shop_buy():
     driver.quit()
 
     assert total_sum == test_sum
-
-
-    
-
-
-
-

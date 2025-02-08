@@ -8,8 +8,10 @@ class Auth:
         self._driver.get('https://www.saucedemo.com/')
 
     def log_in(self, username, password):
-        self._driver.find_element(By.CSS_SELECTOR, '#user-name').send_keys(username)
-        self._driver.find_element(By.CSS_SELECTOR, '#password').send_keys(password)
+        self._driver.find_element(
+            By.CSS_SELECTOR,
+            '#user-name').send_keys(username)
+        self._driver.find_element(
+            By.CSS_SELECTOR,
+            '#password').send_keys(password)
         self._driver.find_element(By.CSS_SELECTOR, '#login-button').click()
-
-    

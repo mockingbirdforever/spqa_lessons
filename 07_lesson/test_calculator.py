@@ -18,7 +18,3 @@ def test_calculator():
     driver.quit()
 
     assert expected_result == actual_result
-
-
-
-

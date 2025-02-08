@@ -1,7 +1,16 @@
 from selenium import webdriver
 from lesson_7_task_1.DataTypesFormPage import FormPage
 from lesson_7_task_1.DataTypesFilledFormPage import FilledFormPage
-from lesson_7_task_1.configurator import *
+from lesson_7_task_1.configurator import first_name
+from lesson_7_task_1.configurator import last_name
+from lesson_7_task_1.configurator import address
+from lesson_7_task_1.configurator import zip_code
+from lesson_7_task_1.configurator import city
+from lesson_7_task_1.configurator import country
+from lesson_7_task_1.configurator import email
+from lesson_7_task_1.configurator import phone
+from lesson_7_task_1.configurator import job_position
+from lesson_7_task_1.configurator import company
 
 
 def test_form():
@@ -35,7 +44,3 @@ def test_form():
     assert filled.check_company(company) is True
 
     driver.quit()
-
-
-
-

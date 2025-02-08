@@ -1,4 +1,3 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
@@ -8,7 +7,8 @@ class FilledFormPage:
         self._driver = driver
 
     def check_first_name(self, first_name):
-        return first_name == self._driver.find_element(By.ID, 'first-name').text
+        return first_name == self._driver.find_element(
+            By.ID, 'first-name').text
 
     def check_last_name(self, last_name):
         return last_name == self._driver.find_element(By.ID, 'last-name').text
@@ -32,8 +32,8 @@ class FilledFormPage:
         return phone == self._driver.find_element(By.ID, 'phone').text
 
     def check_job_position(self, job_position):
-        return job_position == self._driver.find_element(By.ID, 'job-position').text
+        return job_position == self._driver.find_element(
+            By.ID, 'job-position').text
 
     def check_company(self, company):
         return company == self._driver.find_element(By.ID, 'company').text
-
